@@ -1,59 +1,40 @@
-## Prerequisites
+# Caesar Cipher Encoder/Decoder GUI
 
-- Python 3.6 or higher
-
-This application uses `tkinter`, which is included in the standard Python library, so no additional installations are necessary.
-
-# Caesar Cipher Tool
-
-This Python application provides a simple graphical user interface (GUI) for encoding and decoding text using the Caesar cipher method.
+## Introduction
+The Caesar Cipher Encoder/Decoder GUI is an interactive Python application that encodes and decodes text using the Caesar cipher technique. It provides a simple graphical user interface for users to easily apply a non-complex classical cipher for educational and entertainment purposes. This application utilizes the classic Caesar shift methodology to move letters through the alphabet for encoding and reverse the process for decoding.
 
 ## Features
+- **Interactive GUI**: Offers a user-friendly graphical interface to interact with the Caesar cipher.
+- **Dual Functionality**: Allows both encoding and decoding of text with a single application.
+- **Adjustable Shift Value**: Users can choose a shift value from 1 to 25 to apply to the cipher.
+- **Character Preservation**: Non-alphabetic characters are not altered, maintaining the integrity of the original text structure.
 
-- Encode and decode text with a shift value between 1 and 25.
-- Simple and user-friendly interface.
-- Responsive design that adapts to window resizing.
-
-## Dependencies
-
-- Python 3
-- Tkinter library (usually comes with Python)
+## Prerequisites
+- Python 3.6 or higher.
+- No additional libraries are required as the application uses `tkinter`, included in the standard Python library.
 
 ## Usage
+1. **Run the Script**: Execute `caesar_cipher_tool.py` in your Python environment to start the application.
+2. **Enter Text**: Type the text you want to encode or decode in the 'Text' field.
+3. **Set Shift Value**: Use the spinbox to select a shift value between 1 and 25.
+4. **Select Mode**: Choose 'Encode' or 'Decode' to set the desired operation.
+5. **Apply Cipher**: Click the 'Apply' button to perform the operation and display the output in the 'Output' field.
 
-Run the script in your Python environment. The GUI will appear with input fields for text and shift value, along with radio buttons to select between encoding and decoding.
+## Security Considerations
+Since the Caesar cipher is a well-known, simple cipher algorithm, it is not secure for modern encryption standards and should not be used for sensitive data protection. It is intended for educational purposes to demonstrate classical encryption techniques.
 
-1. Enter the text you want to encode or decode in the 'Text' field.
-2. Select the shift value (1-25) using the spinbox.
-3. Choose 'Encode' or 'Decode' to set the desired operation.
-4. Click 'Apply' to execute the operation and the output will be displayed in the 'Output' field.
+## FAQs
+Q: What is the Caesar cipher?
+A: The Caesar cipher is one of the earliest and simplest encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down or up the alphabet.
 
-## Custom Input Widget
+Q: Can the shift value be negative or greater than 25?
+A: The shift value is between 1 and 25. The GUI does not support negative values; however, the shift wraps around the alphabet, so a shift of 26 would be equivalent to no shift at all.
 
-The `InputWidget` class extends the `tk.Frame` class and provides input fields for the text and shift value. 
+Q: Is this application secure?
+A: The Caesar cipher is not secure by modern standards and is easily broken with frequency analysis. It should be used for educational purposes only.
 
-- The text field allows the user to input the string they want to process.
-- The shift value spinbox allows the user to select a number between 1 and 25, representing the shift in the Caesar cipher.
+## Troubleshooting
+- **Incorrect Output**: Ensure the correct mode (encode or decode) is selected and the shift value matches that used for encoding.
+- **Non-Functioning GUI**: Verify that Python and `tkinter` are correctly installed on your system.
 
-## Custom Result Widget
-
-The `ResultWidget` class also extends the `tk.Frame` class and displays the output of the cipher operation in a read-only entry widget.
-
-## CipherGUI
-
-The `CipherGUI` class is the main application window and contains the logic for the Caesar cipher. It handles user interactions and performs the cipher operation based on the selected mode (encode/decode).
-
-## Caesar Cipher Logic
-
-The Caesar cipher logic is implemented in the `caesar_cipher` method of the `CipherGUI` class. It shifts the letters of the input text by the specified shift value to encode or decode the text.
-
-## Applying the Cipher
-
-The `apply` method is triggered when the user clicks the 'Apply' button. It retrieves the input from the user, calls the `caesar_cipher` method with the appropriate parameters, and displays the result.
-
-## Running the Application
-
-Ensure you have Python installed on your system. Clone or download the repository and run the script:
-
-```bash
-python caesar_cipher_tool.py
+For further assistance or to report bugs, please open an issue on the project's issue tracker.
